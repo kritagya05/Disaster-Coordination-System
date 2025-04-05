@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post-Disaster Recovery - RescueSync</title>
+  <link rel="stylesheet" href="recovery.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">RescueSync</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="alerts.html">Alerts</a></li>
+      <li><a href="#">Emergency</a></li>
+      <li><a href="#">Recovery</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <section class="recovery-section">
+    <h2>Post-Disaster Recovery</h2>
+    <form id="recoveryForm">
+      <input type="text" placeholder="Your Name" name="name" required>
+      <input type="text" placeholder="Location" name="location" required>
+      <textarea placeholder="Recovery update..." name="update" required></textarea>
+      <button type="submit">Submit Recovery Update</button>
+    </form>
+
+    <div class="recovery-updates">
+      <h3>Live Recovery Updates</h3>
+      <ul id="updatesList"></ul>
+    </div>
+  </section>
+
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
+  <script src="recovery.js"></script>
+</body>
+</html>
