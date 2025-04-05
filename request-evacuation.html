@@ -20,38 +20,42 @@
 
   <section class="report-disaster">
     <h2>Request Evacuation</h2>
-    <p>Submit your location and details for urgent evacuation support.</p>
-    <form action="https://formsubmit.co/kritagyay2006@gmail.com" method="POST" id="evacuation-form">
+    <p>Provide your details and location to request evacuation support.</p>
+    <form id="evacuationForm" action="https://formsubmit.co/kritagyay2006@gmail.com" method="POST">
       <label>Name:</label>
       <input type="text" name="Name" required />
 
-      <label>Mobile Number:</label>
-      <input type="number" name="Mobile" required />
+      <label>Contact Number:</label>
+      <input type="number" name="Contact" required />
 
-      <label>Location</label>
-      <input type="text" name="Location" placeholder="Your current location" required />
+      <label>Location:</label>
+      <input type="text" name="Location" required />
 
-      <label>Number of People</label>
-      <input type="number" name="People to Evacuate" min="1" required />
+      <label>Number of People to Evacuate:</label>
+      <input type="number" name="People Count" required />
 
-      <label>Urgency Level (1-10)</label>
-      <input type="number" name="Urgency Level" min="1" max="10" required />
-
-      <label>Additional Information</label>
-      <textarea name="Additional Info" placeholder="Any injuries or urgent needs?" required></textarea>
+      <label>Special Conditions:</label>
+      <textarea name="Conditions" placeholder="e.g. medical needs, children" required></textarea>
 
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <button type="submit" class="styled-btn">Request Evacuation</button>
+      <button type="submit" class="styled-btn">Send Request</button>
     </form>
-    <p id="report-status"></p>
+    <p id="status"></p>
   </section>
 
   <script>
     function toggleMenu() {
       document.getElementById("navLinks").classList.toggle("show");
     }
+
+    document.getElementById("evacuationForm").addEventListener("submit", function (e) {
+      setTimeout(() => {
+        document.getElementById("evacuationForm").reset();
+        document.getElementById("status").innerText = "Evacuation request submitted!";
+      }, 500); 
+    });
   </script>
 </body>
 </html>
