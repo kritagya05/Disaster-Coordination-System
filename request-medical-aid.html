@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Request Medical Aid - RescueSync</title>
+  <link rel="stylesheet" href="request-medical-aid.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="logo">RescueSync</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Alerts</a></li>
+      <li><a href="#">Emergency</a></li>
+      <li><a href="#">Recovery</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <section class="report-disaster">
+    <h2>Request Medical Aid</h2>
+    <p>Fill the form to request medical assistance immediately.</p>
+    <form action="https://formsubmit.co/kritagyay2006@gmail.com" method="POST" id="medical-aid-form">
+      <label>Name:</label>
+      <input type="text" name="Name" required />
+
+      <label>Mobile Number:</label>
+      <input type="number" name="Mobile" required />
+
+      <label>Location</label>
+      <input type="text" name="Location" required />
+
+      <label>Urgency Level (1-10)</label>
+      <input type="number" name="Urgency Level" min="1" max="10" required />
+
+      <label>Description of Medical Need</label>
+      <textarea name="Medical Description" placeholder="Describe the situation" required></textarea>
+
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <button type="submit" class="styled-btn">Request Aid</button>
+    </form>
+    <p id="report-status"></p>
+  </section>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+  </script>
+</body>
+</html>

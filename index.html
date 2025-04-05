@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RescueSync: Disaster coordination</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">RescueSync: Disaster coordination</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Alerts</a></li>
+      <li><a href="#">Emergency</a></li>
+      <li><a href="#">Recovery</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <header class="hero">
+    <h1>Stay Safe. Stay Informed.</h1>
+    <p>Real-time disaster alerts and emergency response coordination.</p>
+    <div class="buttons">
+      <button class="report-btn" onclick="window.location.href='report-disaster.html'">Report a disaster</button>
+      <button class="help-btn" onclick="window.location.href='get-help.html'">Get Emergency Help</button>
+    </div>
+  </header>
+
+  <section class="alerts">
+    <h2>Live Disaster Alerts</h2>
+    <div id="alert-container"></div>
+  </section>
+
+  <section class="classification">
+    <h2>Classify Disaster</h2>
+    <form id="disaster-form">
+      <label>Disaster Type:</label>
+      <input type="text" id="disaster-type" required />
+      <label>Severity (1-10):</label>
+      <input type="number" id="severity" min="1" max="10" required />
+      <button type="submit" class="styled-btn">Check</button>
+    </form>
+    <p id="classification-result"></p>
+  </section>
+
+  <section class="resources">
+    <h2>Resource Management</h2>
+    <button class="styled-btn" onclick="checkResources()">Check Resources</button>
+    <p id="resource-result"></p>
+  </section>
+
+  <section class="map-section">
+    <h2>Disaster Location</h2>
+    <div id="map"></div>
+  </section>
+
+  <section class="chatbot">
+    <h2>Emergency Assistance Chatbot</h2>
+    <div id="chatbox" class="chatbox"></div>
+    <input type="text" id="userInput" placeholder="Ask something..." />
+    <button onclick="sendMessage()" class="styled-btn">Send</button>
+  </section>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

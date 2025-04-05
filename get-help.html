@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Get Emergency Help</title>
+  <link rel="stylesheet" href="get-help.css">
+</head>
+<body>
+
+  <nav class="navbar">
+      <div class="logo">RescueSync: Disaster Response</div>
+      <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#">Alerts</a></li>
+          <li><a href="#">Emergency</a></li>
+          <li><a href="#">Recovery</a></li>
+      </ul>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
+
+  <section class="emergency-help">
+    <h2>Need Emergency Assistance?</h2>
+    <p>Select the type of help you need and our system will connect you with the nearest available resources.</p>
+
+    <div class="buttons">
+      <button class="help-btn" onclick="window.location.href='request-medical-aid.html'">Request Medical Aid</button>
+      <button class="help-btn">Request Evacuation</button>
+      <button class="help-btn">Request Food/Water</button>
+      <button class="help-btn urgent" onclick="window.location.href='urgent-sos.html'">Urgent SOS 🚨</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+body {
+    background-color: #111;
+    color: #fff;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .sos-container {
+    text-align: center;
+    background-color: rgba(0, 255, 255, 0.1);
+    padding: 40px;
+    border-radius: 20px;
+    border: 2px solid cyan;
+  }
+  
+  button {
+    background-color: red;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: darkred;
+  }
+  
