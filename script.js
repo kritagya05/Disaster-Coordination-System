@@ -100,6 +100,12 @@ const alerts = [
     });
   });
   
+  document.getElementById("evacuationForm").addEventListener("submit", function (e) {
+    setTimeout(() => {
+      document.getElementById("evacuationForm").reset();
+      document.getElementById("status").innerText = "Evacuation request submitted!";
+    }, 500);
+  });
   
   
   
