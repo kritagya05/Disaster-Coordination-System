@@ -45,6 +45,17 @@
     <p id="status"></p>
   </section>
 
-  <script src="script.js"></script>
+  <script>
+    function toggleMenu() {
+      document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    document.getElementById("evacuationForm").addEventListener("submit", function (e) {
+      setTimeout(() => {
+        document.getElementById("evacuationForm").reset();
+        document.getElementById("status").innerText = "Evacuation request submitted!";
+      }, 500);
+    });
+  </script>
 </body>
 </html>
