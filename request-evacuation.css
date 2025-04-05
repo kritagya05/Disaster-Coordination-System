@@ -92,19 +92,19 @@ body {
     text-align: left;
 }
 
-#evacuation-form {
+#medical-aid-form {
     display: flex;
     flex-direction: column;
     gap: 15px;
 }
 
-#evacuation-form label {
+#medical-aid-form label {
     font-weight: bold;
     font-size: 16px;
 }
 
-#evacuation-form input,
-#evacuation-form textarea {
+#medical-aid-form input,
+#medical-aid-form textarea {
     width: 100%;
     padding: 12px;
     border: none;
@@ -115,7 +115,7 @@ body {
     outline: none;
 }
 
-#evacuation-form textarea {
+#medical-aid-form textarea {
     height: 100px;
     resize: none;
 }
