@@ -11,31 +11,40 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 25px 35px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 35px;
     background: #222;
+    box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
     z-index: 1000;
-    box-shadow: 0 4px 10px rgba(0, 255, 255, 0.2);
+    flex-wrap: wrap;
   }
   
   .logo {
     font-size: 20px;
     font-weight: bold;
     color: cyan;
+    white-space: nowrap;
   }
   
   .nav-links {
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
     list-style: none;
+    margin: 0;
+    padding: 0;
+    flex: 1 1 auto;
+    justify-content: center;
   }
   
   .nav-links li a {
     color: white;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+    white-space: nowrap;
   }
   
   .nav-links li a:hover {
@@ -44,19 +53,22 @@ body {
   
   .menu-toggle {
     font-size: 24px;
+    cursor: pointer;
     display: none;
     color: white;
   }
   
-  @media (max-width: 768px) {
+  @media screen and (max-width: 768px) {
     .nav-links {
       display: none;
       flex-direction: column;
+      gap: 10px;
       background: #222;
-      width: 100%;
       position: absolute;
       top: 60px;
       left: 0;
+      width: 100%;
+      padding: 10px;
       z-index: 999;
     }
   
@@ -68,6 +80,7 @@ body {
       display: block;
     }
   }
+  
   
   .alerts-section {
     padding: 20px;
