@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Alerts - RescueSync</title>
+  <title>Live Alerts - RescueSync</title>
   <link rel="stylesheet" href="alerts.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
@@ -12,22 +12,24 @@
     <div class="logo">RescueSync</div>
     <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
-      <li><a href="#">Alerts</a></li>
       <li><a href="#">Emergency</a></li>
       <li><a href="#">Recovery</a></li>
+      <li><a href="#">Medical Aid</a></li>
     </ul>
     <div class="menu-toggle" onclick="toggleMenu()">☰</div>
   </nav>
 
   <section class="alerts-section">
     <h2>Live Disaster Alerts</h2>
-    <button id="add-test-alert-btn" class="styled-btn">Add Test Alert</button>
+    <button onclick="addTestAlert()">➕ Add Test Alert</button>
+    <div id="alerts"></div>
     <div id="map"></div>
-    <div id="alerts-container"></div>
   </section>
 
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+  <audio id="alert-sound" src="https://www.soundjay.com/buttons/beep-07.wav" preload="auto"></audio>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="alerts.js"></script>
 </body>
