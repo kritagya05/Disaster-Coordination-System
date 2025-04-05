@@ -1,32 +1,126 @@
 body {
-    background-color: #111;
-    color: #fff;
-    font-family: sans-serif;
+  background-color: #111;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  margin: 0;
+  padding-top: 80px;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 35px;
+  background: #222;
+  box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
+  z-index: 1000;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: cyan;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  color: cyan;
+}
+
+.menu-toggle {
+  font-size: 24px;
+  cursor: pointer;
+  display: none;
+  color: white;
+}
+
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: #222;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-links.show {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
   }
-  
-  .sos-container {
-    text-align: center;
-    background-color: rgba(0, 255, 255, 0.1);
-    padding: 40px;
-    border-radius: 20px;
-    border: 2px solid cyan;
+
+  .menu-toggle {
+    display: block;
   }
-  
-  button {
-    background-color: red;
-    color: white;
-    font-size: 1.2rem;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: darkred;
-  }
-  
+}
+
+.report-disaster {
+  width: 90%;
+  max-width: 500px;
+  background: #222;
+  padding: 30px;
+  border-radius: 10px;
+  margin: 60px auto;
+  box-shadow: 0px 4px 10px rgba(0, 255, 255, 0.2);
+  text-align: left;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  background: #333;
+  color: white;
+  font-size: 16px;
+}
+
+.styled-btn {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: cyan;
+  color: black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.styled-btn:hover {
+  background: white;
+  color: black;
+  transform: translateY(-3px);
+}
+
+#status {
+  margin-top: 15px;
+  font-size: 16px;
+  color: cyan;
+}

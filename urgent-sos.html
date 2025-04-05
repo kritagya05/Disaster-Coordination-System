@@ -1,21 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Urgent SOS</title>
-  <link rel="stylesheet" href="urgent-sos.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Urgent SOS - RescueSync</title>
+  <link rel="stylesheet" href="urgent-sos.css" />
 </head>
 <body>
-  <div class="sos-container">
-    <h1>Urgent SOS</h1>
-    <form id="sosForm" action="https://formsubmit.co/kritagyay2006@gmail.com" method="POST">
-      <input type="hidden" name="_subject" value="🚨 Urgent SOS Alert!">
-      <input type="hidden" name="Location" id="locationField">
-      <button type="button" id="sosButton">Send SOS</button>
-    </form>
-    <p id="status"></p>
-  </div>
+  <nav class="navbar">
+    <div class="logo">RescueSync</div>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="#">Alerts</a></li>
+      <li><a href="#">Emergency</a></li>
+      <li><a href="#">Recovery</a></li>
+    </ul>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+  </nav>
 
-  <script src="script.js"></script>
+  <section class="report-disaster">
+    <h2>⚠️ Urgent SOS</h2>
+    <p>Your location will be automatically detected. Just tell us what the emergency is.</p>
+
+    <form id="sosForm" action="https://formsubmit.co/kritagyay2006@gmail.com" method="POST">
+      <input type="text" name="Location" id="locationInput" placeholder="Detecting location..." readonly required />
+      <input type="text" name="Emergency Type" placeholder="Fire, Collapse, Attack..." required />
+
+      <input type="hidden" name="Urgency" value="High">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <button type="submit" class="styled-btn urgent">🚨 Send Instant SOS</button>
+    </form>
+
+    <p id="status"></p>
+  </section>
+
+  <script src="urgent-sos.js"></script>
 </body>
 </html>
