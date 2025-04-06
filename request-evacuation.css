@@ -126,7 +126,7 @@ body {
     font-weight: bold;
     border: none;
     border-radius: 8px;
-    background: cyan
+    background: cyan;
     color: black;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
