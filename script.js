@@ -42,24 +42,27 @@ const alerts = [
   }
   
   async function sendMessage() {
-    const input = document.getElementById("userInput");
-    const message = input.value.trim();
-    if (!message) return;
+    const input = document.getElementById("userInput").value;
+    if (!input.trim()) return;
     const chatbox = document.getElementById("chatbox");
-    const userMessage = document.createElement("p");
-    userMessage.innerHTML = `<strong>You:</strong> ${message}`;
-    chatbox.appendChild(userMessage);
-    const res = await fetch("http://localhost:3000/chatbot", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ message })
-    });
-    const data = await res.json();
-    const botMessage = document.createElement("p");
-    botMessage.innerHTML = `<strong>Bot:</strong> ${data.reply}`;
-    chatbox.appendChild(botMessage);
-    input.value = "";
-    chatbox.scrollTop = chatbox.scrollHeight;
+    chatbox.innerHTML += `<div class='user-msg'>You: ${input}</div>`;
+    document.getElementById("userInput").value = "";
+
+    try {
+      const response = await fetch("http://localhost:3000/chatbot", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ message: input })
+      });
+
+      const data = await response.json();
+      chatbox.innerHTML += `<div class='bot-msg'>Bot: ${data.reply}</div>`;
+      chatbox.scrollTop = chatbox.scrollHeight;
+    } catch (error) {
+      chatbox.innerHTML += `<div class='bot-msg'>Bot: Failed to respond.</div>`;
+    }
   }
   
   window.onload = () => {
