@@ -18,5 +18,5 @@ app.post("/chatbot", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`RescueSync server running at https://disaster-coordination-system.vercel.app/`);
+  console.log(`RescueSync server running at http://localhost:${port}`);
 });
