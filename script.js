@@ -41,28 +41,27 @@ const alerts = [
     navLinks.classList.toggle("show");
   }
   
-  async function sendMessage() {
+  function sendMessage() {
     const input = document.getElementById("userInput").value;
     if (!input.trim()) return;
+
     const chatbox = document.getElementById("chatbox");
     chatbox.innerHTML += `<div class='user-msg'>You: ${input}</div>`;
     document.getElementById("userInput").value = "";
 
-    try {
-      const response = await fetch("http://localhost:3000/chatbot", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ message: input })
-      });
+    let message = input.toLowerCase();
+    let reply = "Please provide more details.";
 
-      const data = await response.json();
-      chatbox.innerHTML += `<div class='bot-msg'>Bot: ${data.reply}</div>`;
+    if (message.includes("flood")) reply = "Move to higher ground immediately and avoid water.";
+    else if (message.includes("earthquake")) reply = "Drop, cover, and hold on. Stay away from windows.";
+    else if (message.includes("cyclone")) reply = "Seek shelter and stay indoors. Secure loose items.";
+    else if (message.includes("fire")) reply = "Evacuate the building and call emergency services.";
+    else if (message.includes("help")) reply = "Emergency teams have been notified. Stay calm.";
+
+    setTimeout(() => {
+      chatbox.innerHTML += `<div class='bot-msg'>Bot: ${reply}</div>`;
       chatbox.scrollTop = chatbox.scrollHeight;
-    } catch (error) {
-      chatbox.innerHTML += `<div class='bot-msg'>Bot: Failed to respond.</div>`;
-    }
+    }, 500);
   }
   
   window.onload = () => {
