@@ -17,7 +17,7 @@ const firebaseConfig = {
   const beep = document.getElementById("alert-sound");
   
 
-  const map = L.map('map').setView([28.6139, 77.2090], 5); // India center
+  const map = L.map('map').setView([28.6139, 77.2090], 5);
   
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
