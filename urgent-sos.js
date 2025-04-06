@@ -2,7 +2,7 @@ function toggleMenu() {
     document.getElementById("navLinks").classList.toggle("show");
   }
   
-  // Autofill geolocation
+  // Autofill Geolocation
   window.onload = function () {
     const locationInput = document.getElementById("locationInput");
   
