@@ -23,13 +23,13 @@
     <p>Please fill the form to request essential supplies.</p>
     <form id="foodWaterForm" action="https://formsubmit.co/kritagyay2006@gmail.com" method="POST">
       <label>Name:</label>
-      <input type="text" name="Name" required />
+      <input type="text" name="Name" placeholder="e.g. John Doe" required />
 
       <label>Contact Number:</label>
-      <input type="number" name="Contact" required />
+      <input type="number" name="Contact" placeholder="Your 10 digit Mobile Number" required />
 
       <label>Location:</label>
-      <input type="text" name="Location" required />
+      <input type="text" name="Location" placeholder="Your Location" required />
 
       <label>Requirement Type:</label>
       <select name="Requirement" required>
@@ -55,7 +55,6 @@
       document.getElementById("navLinks").classList.toggle("show");
     }
 
-    // Reset form after submission
     document.getElementById("foodWaterForm").addEventListener("submit", function () {
       setTimeout(() => {
         document.getElementById("foodWaterForm").reset();
