@@ -1,4 +1,4 @@
-// Firebase config
+
 const firebaseConfig = {
     apiKey: "AIzaSyAB24-iciGhyT0KlMk9NLE1odQPc5KTWzQ",
     authDomain: "rescuesync-427d8.firebaseapp.com",
@@ -8,23 +8,22 @@ const firebaseConfig = {
     messagingSenderId: "638661212689",
     appId: "1:638661212689:web:e22874c19f86458fd80fb0"
   };
-  
-  // Initialize Firebase
+
   firebase.initializeApp(firebaseConfig);
   const db = firebase.database();
   
-  // Alert container and audio
+
   const alertsContainer = document.getElementById("alerts");
   const beep = document.getElementById("alert-sound");
   
-  // Leaflet map setup
+
   const map = L.map('map').setView([28.6139, 77.2090], 5); // India center
   
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '© OpenStreetMap contributors'
   }).addTo(map);
   
-  // Fetch and display alerts
+
   db.ref("disaster_alerts").on("child_added", (snapshot) => {
     const alert = snapshot.val();
   
@@ -48,7 +47,7 @@ const firebaseConfig = {
     }
   });
   
-  // Add test alert button
+
   function addTestAlert() {
     const newAlert = {
       "Disaster Type": "Test Alert",
