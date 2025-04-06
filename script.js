@@ -57,6 +57,7 @@ const alerts = [
     else if (message.includes("cyclone")) reply = "Seek shelter and stay indoors. Secure loose items.";
     else if (message.includes("fire")) reply = "Evacuate the building and call emergency services.";
     else if (message.includes("help")) reply = "Emergency teams have been notified. Stay calm.";
+    else if (message.includes("hurricane")) reply = "Stay indoor and away from window.";
 
     setTimeout(() => {
       chatbox.innerHTML += `<div class='bot-msg'>Bot: ${reply}</div>`;
